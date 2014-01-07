@@ -1,0 +1,13 @@
+<%= simple_form_for @document do |f| %>
+    <%= f.association :product, :input_html => {:style => 'width: 350px'} %>
+    <%= f.association :location, :input_html => {:style => 'width: 350px'} %>
+    <%= f.input :docname, label: 'Document Name', :input_html => {:style => 'width: 350px'} %>
+    <%= f.input :deldoc, label: 'Delivery Docket', :input_html => {:style => 'width: 250px'} %>
+    <%= f.input :lotnum, label: 'Lot Number', :input_html => {:style => 'width: 250px'} %>
+    <%= f.input :custord, label: 'Order Number', :input_html => {:style => 'width: 250px'} %>
+    <%= f.input :salesorder, label: 'Sales Order#', :input_html => {:style => 'width: 250px'} %>
+    <%= f.input :docdate, label: 'Document Date', as: :date %>
+    <br>
+    <%= f.button :submit %>
+<% end %>
+

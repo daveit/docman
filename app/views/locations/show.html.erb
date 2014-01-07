@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @location.name %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @location.client.name %>
+</p>
+<% if current_user.has_role? :admin %>
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<% end %>
+<%= link_to 'Back', locations_path %>
