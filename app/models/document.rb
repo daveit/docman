@@ -9,7 +9,7 @@ class Document < ActiveRecord::Base
   
   include PgSearch
   pg_search_scope :search, against: [:docname, :deldoc, :lotnum, :custord, :salesorder, :docdate],
-    using: {tsearch: {dictionary: "english"}},
+    using: {tsearch: {prefix: true, dictionary: "english"}},
     associated_against: {location: :name, product: [:name, :code]}
 
   def self.text_search(query)
